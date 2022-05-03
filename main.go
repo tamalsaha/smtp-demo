@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"net"
 	"net/smtp"
 	"os"
 
@@ -18,13 +19,15 @@ func main() {
 	e.Text = []byte("Text Body is, of course, supported!")
 	e.HTML = []byte("<h1>Fancy HTML is supported, too!</h1>")
 
-	host := os.Getenv("MG_DOMAIN")
-	username := os.Getenv("MG_SMTP_USERNAME")
-	password := os.Getenv("MG_SMTP_PASSWORD")
+	addr := os.Getenv("SMTP_ADDRESS")
+	host, _, err := net.SplitHostPort(addr)
+	if err != nil {
+		_, _ = fmt.Fprintln(os.Stderr, err.Error())
+	}
+	username := os.Getenv("SMTP_USERNAME")
+	password := os.Getenv("SMTP_PASSWORD")
 
-	fmt.Println(host, username)
-
-	err := e.Send("smtp.mailgun.org:587", smtp.PlainAuth("", username, password, "smtp.mailgun.org"))
+	err = e.Send(addr, smtp.PlainAuth("", username, password, host))
 	if err != nil {
 		_, _ = fmt.Fprintln(os.Stderr, err.Error())
 	}
