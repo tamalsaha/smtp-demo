@@ -15,7 +15,7 @@ func main() {
 	e.To = []string{"tamal@appscode.com"}
 	e.Bcc = []string{"appscode@appscode.com"}
 	e.Cc = []string{"saif@appscode.com"}
-	e.Subject = "Awesome Subject"
+	e.Subject = "Awesome Sendgrid"
 	e.Text = []byte("Text Body is, of course, supported!")
 	e.HTML = []byte("<h1>Fancy HTML is supported, too!</h1>")
 	e.AttachFile("/Users/tamal/go/src/github.com/tamalsaha/smtp-demo/main.go")
@@ -23,12 +23,13 @@ func main() {
 	e.AttachFile("/Users/tamal/Downloads/AppsCode - Backend Engineer.pdf")
 
 	addr := os.Getenv("SMTP_ADDRESS")
-	host, _, err := net.SplitHostPort(addr)
+	host, port, err := net.SplitHostPort(addr)
 	if err != nil {
 		_, _ = fmt.Fprintln(os.Stderr, err.Error())
 	}
 	username := os.Getenv("SMTP_USERNAME")
 	password := os.Getenv("SMTP_PASSWORD")
+	fmt.Println(host, port, username, password)
 
 	err = e.Send(addr, smtp.PlainAuth("", username, password, host))
 	if err != nil {
