@@ -20,10 +20,6 @@ The ```email``` package currently supports the following:
 ### Installation
 ```go get gomodules.xyz/email```
 
-*Note: Version > 1 of this library requires Go v1.5 or above.*
-
-*If you need compatibility with previous Go versions, you can use the previous package at gopkg.in/jordan-wright/email.v1*
-
 ### Examples
 #### Sending email using Gmail
 ```go
@@ -84,6 +80,6 @@ for i := 0; i < 4; i++ {
 Sections inspired by the handy [gophermail](https://github.com/jpoehls/gophermail) project.
 
 ### Contributors
-I'd like to thank all the [contributors and maintainers](https://github.com/jordan-wright/email/graphs/contributors) of this package.
+I'd like to thank all the contributors and maintainers of [jordan-wright/email](https://github.com/jordan-wright/email/graphs/contributors) package.
 
 A special thanks goes out to Jed Denlea [jeddenlea](https://github.com/jeddenlea) for his numerous contributions and optimizations.
