@@ -18,6 +18,9 @@ func main() {
 	e.Subject = "Awesome Subject"
 	e.Text = []byte("Text Body is, of course, supported!")
 	e.HTML = []byte("<h1>Fancy HTML is supported, too!</h1>")
+	e.AttachFile("/Users/tamal/go/src/github.com/tamalsaha/smtp-demo/main.go")
+	e.AttachFile("/Users/tamal/go/src/github.com/tamalsaha/smtp-demo/go.mod")
+	e.AttachFile("/Users/tamal/Downloads/AppsCode - Backend Engineer.pdf")
 
 	addr := os.Getenv("SMTP_ADDRESS")
 	host, _, err := net.SplitHostPort(addr)
