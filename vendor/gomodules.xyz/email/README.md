@@ -1,7 +1,7 @@
 email
 =====
 
-[![Build Status](https://travis-ci.org/jordan-wright/email.png?branch=master)](https://travis-ci.org/jordan-wright/email) [![GoDoc](https://godoc.org/github.com/jordan-wright/email?status.svg)](https://godoc.org/github.com/jordan-wright/email)
+[![Build Status](https://github.com/gomodules/email/actions/workflows/test.yml/badge.svg)](https://github.com/gomodules/email/actions/workflows/test.yml) [![GoDoc](https://godoc.org/gomodules.xyz/email?status.svg)](https://godoc.org/gomodules.xyz/email)
 
 Robust and flexible email library for Go
 
@@ -18,7 +18,7 @@ The ```email``` package currently supports the following:
 *  More to come!
 
 ### Installation
-```go get github.com/jordan-wright/email```
+```go get gomodules.xyz/email```
 
 *Note: Version > 1 of this library requires Go v1.5 or above.*
 
@@ -78,7 +78,7 @@ for i := 0; i < 4; i++ {
 ```
 
 ### Documentation
-[http://godoc.org/github.com/jordan-wright/email](http://godoc.org/github.com/jordan-wright/email)
+[http://godoc.org/gomodules.xyz/email](http://godoc.org/gomodules.xyz/email)
 
 ### Other Sources
 Sections inspired by the handy [gophermail](https://github.com/jpoehls/gophermail) project.

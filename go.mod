@@ -2,4 +2,4 @@ module github.com/tamalsaha/smtp-demo
 
 go 1.18
 
-require github.com/jordan-wright/email v4.0.1-0.20210109023952-943e75fe5223+incompatible
+require gomodules.xyz/email v0.0.0-20220503004447-bb067ff5a3dc

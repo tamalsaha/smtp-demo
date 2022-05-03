@@ -1,15 +1,31 @@
 package main
 
-import "github.com/jordan-wright/email"
+import (
+	"fmt"
+	"net/smtp"
+	"os"
+
+	"gomodules.xyz/email"
+)
 
 func main() {
 	e := email.NewEmail()
-	e.From = "Jordan Wright <test@gmail.com>"
-	e.To = []string{"test@example.com"}
-	e.Bcc = []string{"test_bcc@example.com"}
-	e.Cc = []string{"test_cc@example.com"}
+	e.From = "Go Code <gocode@appscode.com>"
+	e.To = []string{"tamal@appscode.com"}
+	e.Bcc = []string{"appscode@appscode.com"}
+	e.Cc = []string{"saif@appscode.com"}
 	e.Subject = "Awesome Subject"
 	e.Text = []byte("Text Body is, of course, supported!")
 	e.HTML = []byte("<h1>Fancy HTML is supported, too!</h1>")
-	e.Send("smtp.gmail.com:587", smtp.PlainAuth("", "test@gmail.com", "password123", "smtp.gmail.com"))
+
+	host := os.Getenv("MG_DOMAIN")
+	username := os.Getenv("MG_SMTP_USERNAME")
+	password := os.Getenv("MG_SMTP_PASSWORD")
+
+	fmt.Println(host, username)
+
+	err := e.Send("smtp.mailgun.org:587", smtp.PlainAuth("", username, password, "smtp.mailgun.org"))
+	if err != nil {
+		_, _ = fmt.Fprintln(os.Stderr, err.Error())
+	}
 }

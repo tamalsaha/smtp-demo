@@ -1,2 +1,2 @@
-github.com/jordan-wright/email v4.0.1-0.20210109023952-943e75fe5223+incompatible h1:jdpOPRN1zP63Td1hDQbZW73xKmzDvZHzVdNYxhnTMDA=
-github.com/jordan-wright/email v4.0.1-0.20210109023952-943e75fe5223+incompatible/go.mod h1:1c7szIrayyPPB/987hsnvNzLushdWf4o/79s3P08L8A=
+gomodules.xyz/email v0.0.0-20220503004447-bb067ff5a3dc h1:iKxa3FvCBS8ZpU9Cj3UqAaEGoWdZywt7K/estNk0w6k=
+gomodules.xyz/email v0.0.0-20220503004447-bb067ff5a3dc/go.mod h1:F2bjw5yfu3tcEFuC7qFbakPqTVs2Z/GTOb1ITtdXFok=
